@@ -81,7 +81,7 @@ const portfolio = {
       name: 'Buscare App',
       link: 'https://github.com/desenvolvimentogamavi/buscare-app',
       repoPrivate: true,
-      images: [],
+      images: ['img/buscare/01.jpeg', 'img/buscare/02.jpg', 'img/buscare/03.jpg', 'img/buscare/04.jpg'],
       tech: ['React Native', 'Redux Toolkit', 'Ahgora'],
       description: 'App for a medical company for consultation support via video calls.'
     }
