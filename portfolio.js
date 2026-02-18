@@ -32,6 +32,7 @@ const portfolio = {
     {
       id: 'ysma',
       name: 'Ysma',
+      repoPrivate: true,
       link: 'https://github.com/Lucashfonseca123/ysma-mobile',
       images: ['img/ysma/01.jpg', 'img/ysma/02.png', 'img/ysma/03.jpg'],
       tech: ['Flutter'],
@@ -49,44 +50,40 @@ const portfolio = {
       description: 'App to support learning for people with autism.'
     },
     {
-      id: 'labirinto-smartphone',
-      name: 'Labirinto com smartphone',
-      link: 'https://github.com/GabrielBueno22/labyrinth_with_smartphone',
-      images: [],
-      tech: ['Flutter', 'Lua', 'Websocket'],
-      description: 'App to control a virtualized labyrinth (computer engineering project).'
-    },
-    {
       id: 'travel-flow',
       name: 'Travel Flow',
+      repoPrivate: true,
       link: 'https://github.com/Lucashfonseca123/travel-flow',
       images: ['img/travel_flow/01.png', 'img/travel_flow/02.png', 'img/travel_flow/03.png'],
       tech: ['Flutter', 'Firebase (Storage, Authentication, Firestore, App Distribution)'],
       description: 'App for organizing trips, in groups or solo.'
     },
     {
-      id: 'buscare',
-      name: 'Buscare App',
-      link: 'https://github.com/desenvolvimentogamavi/buscare-app',
-      images: [],
-      tech: ['React Native', 'Redux Toolkit', 'Ahgora'],
-      description: 'App for a medical company for consultation support via video calls.'
-    },
-    {
       id: 'pda',
       name: 'PDA',
       link: null,
-      images: [],
+      repoPrivate: true,
+      images: ['img/pda/01.jpeg', 'img/pda/02.jpg'],
       tech: ['React Native', 'Redux Toolkit'],
       description: 'App for warehouse stock control (installed on a bis machine).'
     },
     {
       id: 'fullfit',
       name: 'Fullfit',
+      repoPrivate: true,
       link: 'https://github.com/hidedevelopment/fullfit-catalogo-mobile',
-      images: [],
+      images: ['img/fullfit/01.jpg', 'img/fullfit/02.jpg', 'img/fullfit/03.jpg', 'img/fullfit/04.jpg'],
       tech: ['Flutter', 'Bloc'],
       description: 'App for product catalog, offline and online.'
+    },
+    {
+      id: 'buscare',
+      name: 'Buscare App',
+      link: 'https://github.com/desenvolvimentogamavi/buscare-app',
+      repoPrivate: true,
+      images: [],
+      tech: ['React Native', 'Redux Toolkit', 'Ahgora'],
+      description: 'App for a medical company for consultation support via video calls.'
     }
   ],
 
@@ -112,12 +109,15 @@ const portfolio = {
       const thumb = project.images[0];
       mediaSection = `<img src="${thumb}" alt="${project.name}" class="project-img" loading="lazy" data-project-id="${project.id}" />`;
     } else {
-      mediaSection = `<div class="project-img-placeholder" aria-label="Image of ${project.name}">Project photo</div>`;
+      mediaSection = `<img src="img/default.svg" alt="${project.name}" class="project-img project-img-default" loading="lazy" />`;
     }
 
-    const link = project.link
-      ? `<a href="${project.link}" target="_blank" rel="noopener" class="project-link">View repository</a>`
-      : '';
+    let link = '';
+    if (project.repoPrivate) {
+      link = `<p class="project-repo-notice">Repository can only be viewed by the administrator — private project.</p>`;
+    } else if (project.link) {
+      link = `<a href="${project.link}" target="_blank" rel="noopener" class="project-link">View repository</a>`;
+    }
 
     const desc = project.description
       ? `<p class="project-desc">${project.description}</p>`

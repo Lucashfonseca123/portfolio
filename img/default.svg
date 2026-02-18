@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" fill="#e8e8e8"/>
+  <g stroke="#9a9a9a" stroke-width="1.5" fill="none">
+    <rect x="140" y="40" width="120" height="160" rx="12"/>
+    <line x1="140" y1="70" x2="260" y2="70"/>
+    <circle cx="200" cy="165" r="18"/>
+  </g>
+  <text x="200" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#888">Project not shown</text>
+</svg>
