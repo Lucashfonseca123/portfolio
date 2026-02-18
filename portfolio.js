@@ -35,6 +35,9 @@ const portfolio = {
       link: 'https://github.com/Lucashfonseca123/ysma-mobile',
       images: ['img/ysma/01.jpg', 'img/ysma/02.png', 'img/ysma/03.jpg'],
       tech: ['Flutter'],
+      storeLinks: [
+        { name: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.ysma.ysma&hl=pt_BR' }
+      ],
       description: 'App for evaluating establishments, optionally with audio or video.'
     },
     {
